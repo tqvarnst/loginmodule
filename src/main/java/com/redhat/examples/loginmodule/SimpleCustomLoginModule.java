@@ -26,7 +26,7 @@ public class SimpleCustomLoginModule extends UsernamePasswordLoginModule {
 	
 	
 	@Override
-	public void initialize(Subject subject, CallbackHandler callbackHandler,
+	public void initialize(Subject subject, CallbackHandler callbackHandler, 	
 			Map<String, ?> sharedState, Map<String, ?> options) {
 		addValidOptions(ALL_VALID_OPTIONS);
 		super.initialize(subject, callbackHandler, sharedState, options);
