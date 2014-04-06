@@ -7,7 +7,7 @@ Make sure you have JBoss EAP maven repos configured.....
    mvn clean install
 
 1. Replace or add a login module to the configuration of JBoss BPM Suite (e.g. $JBOSS_HOME/standalone/configuration/standalone.xml)
-   <security-domain name="other" cache-type="default">
+        <security-domain name="other" cache-type="default">
                <authentication>
                   <login-module code="com.redhat.examples.loginmodule.SimpleCustomLoginModule" flag="required" module="simpleloginmodule">
                       <module-option name="serverRole" value="admin"/>
@@ -17,6 +17,7 @@ Make sure you have JBoss EAP maven repos configured.....
             </security-domain>
             
 2. Copy the content of the module into the module directory of JBoss BPM Suite
+
    cp -r target/module/* $JBOSS_HOME/modules/
 
 3. (Re)start the BPM Suite.
