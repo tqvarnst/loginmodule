@@ -11,9 +11,16 @@ I created this example on behalf of a customer that uses the REST interface for 
         
         <security-domain name="other" cache-type="default">
            <authentication>
-              <login-module code="com.redhat.examples.loginmodule.SimpleCustomLoginModule" flag="required" module="simpleloginmodule">
+              <login-module code="Remoting" flag="optional"> 
+                 <module-option name="password-stacking" value="useFirstPass"/>
+              </login-module>
+              <login-module code="com.redhat.examples.loginmodule.SimpleCustomLoginModule" flag="sufficient" module="simpleloginmodule">
+                 <module-option name="password-stacking" value="useFirstPass"/>
                  <module-option name="serverRole" value="admin"/>
                  <module-option name="serverPassword" value="qwerty67"/>
+              </login-module>
+              <login-module code="RealmDirect" flag="required">
+                 <module-option name="password-stacking" value="useFirstPass"/>
               </login-module>
            </authentication>
         </security-domain>
@@ -25,7 +32,9 @@ I created this example on behalf of a customer that uses the REST interface for 
 3. (Re)start the BPM Suite.
 4. Try to login with any username and the password configured in step 3. Verify that the user are assigned the correct role.
 
-Please note that this module could be stacked with other modules.
+This configuration means that any username with password **qwerty67** will succed in login in. 
+
+*For security reasons it's recommende to use hashed password, but that's not what I'm trying to illustrate in this example. Even better would be to store the password in a secure store or for example an LDAP directory'*
 
 Good luck, 
 
