@@ -35,7 +35,7 @@ I created this example on behalf of a customer that uses the REST interface for 
 
         cp -r target/module/* $JBOSS_HOME/modules/
 
-3. (Re)start the BPM Suite.
+3. (Re)start the Server.
 4. Try to login with any username and the password configured in step 3. Verify that the user are assigned the correct role.
 
 This configuration means that any username with password **qwerty67** will succed in login in. Users that knows their username and password can ofcourse login (currently using the builtin application realm authentication, but can be replaced with for example LDAP/AD or SPNEGO and/or Kerberos). 
