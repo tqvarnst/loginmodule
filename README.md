@@ -5,7 +5,7 @@ Make sure you have JBoss EAP maven repos configured.....
 
 1. Build the project with maven
     
-       mvn clean install
+        mvn clean install
 
 1. Replace or add a login module to the configuration of JBoss BPM Suite (e.g. $JBOSS_HOME/standalone/configuration/standalone.xml)
         
@@ -20,7 +20,7 @@ Make sure you have JBoss EAP maven repos configured.....
             
 2. Copy the content of the module into the module directory of JBoss BPM Suite
 
-       cp -r target/module/* $JBOSS_HOME/modules/
+        cp -r target/module/* $JBOSS_HOME/modules/
 
 3. (Re)start the BPM Suite.
 4. Try to login with any username and the password configured in step 2. Verify that the user are assigned the correct role.
