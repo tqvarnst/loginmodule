@@ -1,13 +1,19 @@
 # Example of Simple login module
 I created this example on behalf of a customer that uses the REST interface for JBoss BPM Suite. This login module allows a intermediate server to identify as a any user as long as an server password is provided. This can for exampl ebe used to authenticate with the REST service of BPM Suite.
 
-1. Make sure you have JBoss EAP maven repos configured.....
+###Prerequisites
+1. Working installtion of JBoos EAP or JBoss BPM Suite
 
-1. Build the project with maven
+### To build and install
+
+1. Make sure you have JBoss EAP maven repos configured. See [here](https://github.com/jboss-developer/jboss-eap-quickstarts/blob/6.3.x-develop/settings.xml) for and example settings.xml
+ 	
+ 
+2. Build the project with maven
     
         mvn clean install
 
-1. Replace or add a login module to the configuration of JBoss BPM Suite (e.g. $JBOSS_HOME/standalone/configuration/standalone.xml)
+3. Replace or add a login module to the configuration of JBoss BPM Suite (e.g. $JBOSS_HOME/standalone/configuration/standalone.xml)
         
         <security-domain name="other" cache-type="default">
            <authentication>
